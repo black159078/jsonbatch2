@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jquery Ajax - Local</title>
+        
+    </head>
+    <body>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+
+           
+            // => $.ajax()
+
+            // $.ajax({
+            //     method:'',
+            //     url:url,
+            //     dataType:'json' // text
+            // }).done((data)=>{
+            //     output
+            // }).fail(()=>{
+            //     error
+            // })
+
+
+            const url = "./l5sampledata.json";
+
+            // Method 1
+            // $.ajax({
+            //     method:'GET',
+            //     url:url,
+            //     dataType:'json'
+            // }).done((data)=>{
+            //     console.log(data);
+
+            //     console.log(data.firstname);
+            //     console.log(data.lastname);
+            //     console.log("Holiday is " + data.holiday[1]);
+            //     if(data.passport === null){
+            //         console.log("He hasn't passport");
+            //     }else{
+            //         console.log("He has passport");
+            //     }
+            //     console.log(data.qualify[0].subject,data.qualify[0].mark);
+            //     console.log(data.qualify[1].subject,data.qualify[1].mark);
+            //     console.log(data.qualify[2].subject,data.qualify[2].mark);
+            // }).fail(()=>{
+            //     console.log("Soemthing is wrong");
+            // });
+
+
+
+
+
+            // Method 2
+            // $.ajax({
+            //     method:'GET',
+            //     url:url,
+            //     dataType:'json',
+            //     success:(getdata)
+            // }).fail(()=>{
+            //     console.log("Error");
+            // });
+
+            // function getdata(data,status,xhr){
+
+            //     console.log(data);
+            //     console.log(typeof data);
+
+            //     console.log(status); // success
+
+            //     console.log(xhr);
+            //     console.log(xhr.status);
+            //     console.log(xhr.responseText);
+
+
+
+            //     console.log(data.firstname);
+            //     console.log(data.lastname);
+            //     console.log("Holiday is " + data.holiday[1]);
+            //     if(data.passport === null){
+            //         console.log("He hasn't passport");
+            //     }else{
+            //         console.log("He has passport");
+            //     }
+            //     console.log(data.qualify[0].subject,data.qualify[0].mark);
+            //     console.log(data.qualify[1].subject,data.qualify[1].mark);
+            //     console.log(data.qualify[2].subject,data.qualify[2].mark);
+
+            // }
+
+
+
+            // Method 3  (short hand)
+
+            // $.get(url,output);
+
+            // function output(data){
+            //     console.log(data);
+
+            //     console.log(data.firstname,data.lastname);
+            // }
+
+
+
+            // Method 4
+
+            // $.getJSON(url,{
+            //     format:'json'
+            // }).done(()=>{
+            //     output
+            // }).fail(()=>{
+            //     error
+            // }).always(function(){
+            //     your execute code are here
+            // })
+
+
+            $.getJSON(url,{
+                format:"json"
+            }).done(function(data){
+                console.log(data)
+            }).fail(function(){
+                console.log("Something is wrong");
+            }).always(function(){
+                console.log("Bye Bye");
+            })
+
+
+            
+
+        </script>
+
+    </body>
+</html>
+
+
+
+
+

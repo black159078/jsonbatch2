@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTTP Request by AJAX</title>
+    </head>
+    <body>
+        
+        <script type="text/javascript">
+
+            
+           let uri =  `https:/randomuser.me/api/`;
+
+
+           const xmlhttp = new XMLHttpRequest();
+
+           xmlhttp.open("GET",uri,false);
+           xmlhttp.send();
+
+           console.log(xmlhttp);
+
+           let result;
+
+           if(xmlhttp.readyState === 4 && xmlhttp.status === 200){
+                result = xmlhttp.responseText;
+           }
+
+           result = JSON.parse(result);
+           console.log(result);
+
+
+           console.log(result.results);
+           console.log(result.results[0]);
+           console.log(result.results[0].name);
+           console.log(result.results[0].name.title,result.results[0].name.first,result.results[0].name.last);
+           console.log(result.results[0]["name"]["title"],result.results[0]["name"]["first"],result.results[0]["name"]["last"]);
+
+            
+
+            
+
+        </script>
+
+    </body>
+</html>

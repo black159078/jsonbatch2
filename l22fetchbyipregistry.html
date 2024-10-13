@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fetch - ipregistry</title>
+        <style type="text/css">
+
+            body{
+                height: 100vh;
+
+                display: grid;
+                place-items: center;
+            }
+
+            .container{
+                width: 300px;
+                background-color: #f4f4f4;
+                padding: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div id="display"></div>
+            <button type="button" id="btn">Load Data</button>
+        </div>
+
+        
+        <script type="text/javascript">
+
+            const getdisplay = document.getElementById('display');
+            const getbtn = document.getElementById('btn');
+
+            const key = `p9kk103z9mf567tn`;
+            let uri =  `https://api.ipregistry.co?key=${key}`;
+            
+
+            getbtn.addEventListener('click',function(){
+
+                fetch(uri).then(function(response){
+                    return response.json();
+                }).then(function(data){
+                    console.log(data);
+
+                    let html = `
+                                <ul>
+                                    <li>External IP = ${data.ip}</li>
+                                    <li>Current Device =  ${data.user_agent.device.name}</li>
+                                    <li>Operation System =  ${data.user_agent.os.name}</li>
+                                    <li>Load By =  ${data.user_agent.name}</li>
+                                    <li>City =  ${data.location.city}</li>
+                                    <li>Local Currency =  ${data.currency.name}</li>
+                                    <li>Time Zone =  ${data.time_zone.id}</li>
+                                </ul>
+                                `;
+
+
+                    getdisplay.innerHTML = html;
+
+
+                }).catch(err=>console.log(err));
+
+            })
+
+
+
+
+
+
+
+        </script>
+
+    </body>
+</html>
+
+
+

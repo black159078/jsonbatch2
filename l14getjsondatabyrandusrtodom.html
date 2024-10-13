@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTTP Request by AJAX - Random User</title>
+        <style type="text/css">
+
+            body{
+                height: 100vh;
+
+                display: grid;
+                place-items: center;
+            }
+
+            .container{
+                width: 300px;
+                background-color: #f4f4f4;
+                padding: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div id="display"></div>
+            <button type="button" id="btn">Load Data</button>
+        </div>
+
+
+
+        
+        <script type="text/javascript">
+
+
+            const getdisplay = document.getElementById('display');
+            const getbtn = document.getElementById('btn');
+
+            
+
+            getbtn.addEventListener('click',function(){
+
+                let uri =  `https:/randomuser.me/api/`;
+
+                const xmlhttp = new XMLHttpRequest();
+                
+
+                xmlhttp.onreadystatechange = function(){
+
+                    if(xmlhttp.readyState === 4 && xmlhttp.status){
+                        let result = xmlhttp.responseText;
+
+                        result = JSON.parse(result);
+                        // console.log(result);
+
+                        let html = `<h3>${result.results[0].name.title}.${result.results[0].name.first} ${result.results[0].name.last}</h3>
+                        <img src="${result.results[0].picture.large}" />`;
+
+                        getdisplay.innerHTML = html;
+                    }
+
+                }
+
+                xmlhttp.onprogress = function(){
+                    console.log("On Progress = ", xmlhttp.readyState,xmlhttp.status); // On Progress = 3 200
+                }
+
+                xmlhttp.onload = function(){
+                    console.log("On Load = ", xmlhttp.readyState,xmlhttp.status); // On Load = 4 200
+                }
+
+                xmlhttp.open('GET',uri,true);
+                xmlhttp.send();
+
+
+            })
+
+
+
+
+
+        </script>
+
+    </body>
+</html>
+
+
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTTP Request by AJAX</title>
+    </head>
+    <body>
+        
+        <script type="text/javascript">
+
+            
+            let uri =  `https:/randomuser.me/api/`;
+
+
+            const xmlhttp = new XMLHttpRequest();
+
+            // result oki
+            // xmlhttp.open("GET",uri,true); // true mean synchronize
+            // xmlhttp.send();
+
+            xmlhttp.onreadystatechange = function(){
+                // console.log("State Changed ",xmlhttp.readyState,xmlhttp.status);
+                
+
+                if(xmlhttp.readyState === 4 && xmlhttp.status === 200){
+
+                    let result = xmlhttp.responseText;
+
+                    result = JSON.parse(result);
+                    // console.log(result);
+
+                    result = JSON.parse(result);
+                    console.log(result);
+
+
+                    console.log(result.results);
+                    console.log(result.results[0]);
+                    console.log(result.results[0].name);
+                    console.log(result.results[0].name.title,result.results[0].name.first,result.results[0].name.last);
+                    console.log(result.results[0]["name"]["title"],result.results[0]["name"]["first"],result.results[0]["name"]["last"]);
+
+            
+
+                }
+                
+           
+            }
+
+
+            // result oki
+            // xmlhttp.open("GET",uri,true); // true mean synchronize
+            // xmlhttp.send();
+
+            // result oki
+            // xmlhttp.open("GET",uri,false); // true mean no synchronize
+            // xmlhttp.send();
+
+
+
+           
+       
+
+            
+
+        </script>
+
+    </body>
+</html>
+
+
+
+<!-- 
+=> xmlhttp.onreadystatechange
+xmlhttp.readyState === 4
+
+
+0 = UNSENT open() has not been called yet
+1 = OPENED send() has been called
+2 = HEADER_RECEIVED send() has been called.
+3 = LOADING downloading, responseText hold partial datas
+4 = DONE the operation is completed. -->

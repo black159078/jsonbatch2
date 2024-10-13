@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTTP Request by AJAX</title>
+    </head>
+    <body>
+        
+        <script type="text/javascript">
+
+            
+            const latitude = "21.9928923";
+            const longitude = "96.0956051";
+            const apikey = "93c74f7cff2ce1966cb28b5abd492daa";
+            // const uri = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apikey}`;
+            const uri = `https://api.openweathermap.org/data/2.5/weather?lat=21.9928923&lon=96.0956051&appid=93c74f7cff2ce1966cb28b5abd492daa`;
+
+            // console.log(uri);
+
+
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET",uri,false);
+            xmlhttp.send();
+
+            console.log(xmlhttp);
+
+            let result;
+
+            if(xmlhttp.readyState === 4 && xmlhttp.status === 200){
+                result = xmlhttp.responseText;
+            }
+
+            result = JSON.parse(result);
+            console.log(result);
+
+
+            console.log(result.weather); 
+            console.log(result.weather[0].main);
+            console.log(result.weather[0]["main"]);
+
+
+
+            console.log(result.wind.speed);
+            console.log(result.wind["speed"]);
+            console.log(result["wind"]["speed"]);
+
+
+            console.log(result.name);
+            console.log(result["name"]);
+
+
+            
+
+            
+
+        </script>
+
+    </body>
+</html>

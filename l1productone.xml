@@ -1,0 +1,8 @@
+<?xml versin="1.0"?>
+<productlist>
+    <product>
+        <name>Webstorm</name>
+        <description>html/css/js support</description>
+        <price>$100</price>
+    </product>
+</productlist>

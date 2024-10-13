@@ -1,0 +1,58 @@
+{
+    "articles":[
+        {
+            "title":"This is new article 1",
+            "content":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "rating":5
+        },
+        {
+            "title":"This is new article 3",
+            "content":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "rating":5
+        },
+        {
+            "title":"This is new article 5",
+            "content":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "rating":5
+        },
+        {
+            "title":"This is new article 7",
+            "content":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "rating":5
+        }
+    ],
+    "sports":[
+        {
+            "title":"This is new sport 2",
+            "content":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "rating":5
+        },
+        {
+            "title":"This is new sport 4",
+            "content":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "rating":5
+        },
+        {
+            "title":"This is new sport 6",
+            "content":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "rating":5
+        },
+        {
+            "title":"This is new sport 8",
+            "content":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "rating":5
+        }
+    ],
+    "stories":[
+        {
+            "title":"This is new story 9",
+            "content":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "rating":5
+        },
+        {
+            "title":"This is new story 10",
+            "content":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "rating":5
+        }
+    ]
+}

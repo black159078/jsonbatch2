@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Axois - Chucknorris</title>
+        <style type="text/css">
+
+            body{
+                height: 100vh;
+
+                display: grid;
+                place-items: center;
+            }
+
+            .container{
+                width: 300px;
+                background-color: #f4f4f4;
+                padding: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div id="display"></div>
+            <button type="button" id="btn">Load Data</button>
+        </div>
+
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+
+            const getdisplay = document.getElementById('display');
+            const getbtn = document.getElementById('btn');
+
+            
+
+            getbtn.addEventListener('click',function(){
+
+                let url =  `https://api.chucknorris.io/jokes/random`;
+
+                axios({
+                    method: "GET",
+                    url:url
+                }).then(function(response){
+                    console.log(response.data);
+
+                    let html = `<img src="${response.data.icon_url}" /><p>${response.data.value}</p>`;
+
+                    getdisplay.innerHTML = html;
+                }).catch(function(err){
+                    console.log(err);
+                })
+                    
+                
+
+                
+
+            })
+
+
+
+
+
+        </script>
+
+    </body>
+</html>
+
+
+

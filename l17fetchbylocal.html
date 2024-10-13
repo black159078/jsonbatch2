@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fetch - Local</title>
+        
+    </head>
+    <body>
+
+
+
+        
+        <script type="text/javascript">
+
+            // => fetch()
+
+            // fetch(url)
+            // .then(response=>response.json())
+            // .then(data)
+            // .catch(err=>console.log(err));
+
+
+            const url = "./l5sampledata.json";
+
+            fetch(url).then(function(response){
+                return response.json();
+            }).then(function(data){
+                console.log(data);
+
+                console.log(data.firstname);
+                console.log(data.lastname);
+                console.log("Holiday is " + data.holiday[1]);
+                if(data.passport === null){
+                    console.log("He hasn't passport");
+                }else{
+                    console.log("He has passport");
+                }
+                console.log(data.qualify[0].subject,data.qualify[0].mark);
+                console.log(data.qualify[1].subject,data.qualify[1].mark);
+                console.log(data.qualify[2].subject,data.qualify[2].mark);
+            });
+
+        </script>
+
+    </body>
+</html>
+
+
+fetch(url).then(function(respone){
+    return response.json();
+}).then(function(data){
+    console.log(data);
+}).catch(function(err){
+    console.log(err);
+})
+
+<!-- fetch(url).then(response=>response.json()).then(data=>console.log(data)).catch(err=>console.log(err)); -->
+
+

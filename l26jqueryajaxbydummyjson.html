@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Ajax - Dummyjson</title>
+        <style type="text/css">
+
+            body{
+                height: 100vh;
+
+                display: grid;
+                place-items: center;
+            }
+
+            .container{
+                width: 300px;
+                background-color: #f4f4f4;
+                padding: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div id="display"></div>
+            <button type="button" id="btn">Load Data</button>
+        </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+
+            const getdisplay = document.getElementById('display');
+            const getbtn = document.getElementById('btn');
+
+            
+
+            getbtn.addEventListener('click',function(){
+
+                let url =  `https://dummyjson.com/products`;
+
+
+                $.ajax({
+                    method:'GET',
+                    url:url,
+                    dataType:'json'
+                }).done((data)=>{
+                    console.log(data);
+
+                    for(let x = 0; x < data.products.length; x++){
+                        console.log("Products id is ",data.products[x].id);
+                        console.log("Products name is ",data.products[x].title);
+                        console.log("Products price is ",data.products[x].price);
+                    }
+                }).fail((err)=>{
+                    console.log(err);
+                })
+
+                    
+
+                
+
+            })
+
+
+
+
+
+        </script>
+
+    </body>
+</html>
+
+
+

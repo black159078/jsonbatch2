@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Ajax - Openweathermap</title>
+    </head>
+    <body>
+        
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+            
+            const latitude = "21.9928923";
+            const longitude = "96.0956051";
+            const apikey = "93c74f7cff2ce1966cb28b5abd492daa";
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apikey}`;
+            // const uri = `https://api.openweathermap.org/data/2.5/weather?lat=21.9928923&lon=96.0956051&appid=93c74f7cff2ce1966cb28b5abd492daa`;
+
+
+
+            $.ajax({
+                method:'GET',
+                url:url,
+                dataType:'json'
+            }).done(function(data){
+                console.log(data);
+
+                console.log(data.weather); 
+                console.log(data.weather[0].main);
+                console.log(data.weather[0]["main"]);
+
+
+
+                console.log(data.wind.speed);
+                console.log(data.wind["speed"]);
+                console.log(data["wind"]["speed"]);
+
+
+                console.log(data.name);
+                console.log(data["name"]);
+            }).fail(function(){
+                console.log("Something is wrong");
+            });
+
+            
+
+
+            
+
+            
+
+        </script>
+
+    </body>
+</html>
