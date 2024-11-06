@@ -266,16 +266,16 @@
                     // console.log('ts',Date.now()); // millisecond
                     // console.log('dt',forecast.dt); // second
 
-                    // 1 Day = 86400 seconds
-                    let dayname = dayofweek(forecast.dt * 1000);
-                    // console.log(dayname);
+                    const daynames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+                    const getday = new Date(forecast.dt_txt).getDay();
+                    console.log(getday);
 
                     let temperature = forecast.main.temp > 0 ? `+${forecast.main.temp}` : `-${forecast.main.temp}`;
 
                     let html = `
                                 <div>
                                     <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="icon" />
-                                    <h3 class="otherday">${dayname}</h3>
+                                    <h3 class="otherday">${daynames[getday]}</h3>
                                     <p class="temperature"><span class="othertemdata">${temperature}</span> &deg;C</p>
                                 </div>
                                 `;
