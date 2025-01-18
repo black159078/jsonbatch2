@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo List</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="./style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h3>My Todo List</h3>
+            <small>Left click to complete & Right click to delete.</small>
+            <form id="form" action="" method="">
+                <div class="form-group">
+                    <input type="text" name="textbox" id="textbox" class="form-control" placeholder="Write Something..." autofocus autocomplete="off" />
+                </div>
+            </form>
+
+            <ul id="list-group" class="list-group">
+                <!-- <li class="list-group-item completed">A Sann 
+                    <div class="action">
+                        <button type="button" class="edit-btn"><i class="fas fa-edit"></i></button>
+                        <button type="button" class="delete-btn"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+
+
+
+
+        <script src="./firebase.js" type="module"></script>
+        <script src="./app.js" type="module"></script>
+    </body>
+</html>

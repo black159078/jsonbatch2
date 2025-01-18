@@ -1,0 +1,81 @@
+=> How to install Tailwind Css
+
+
+----------------------------------------------------------------
+
+
+
+=> Enable Email/Password Authentication
+Make sure you have enable Email/Password authentication in your Firebase Console
+
+Authentication > Sign-in method
+Ensure Email/Password is enabled
+
+=> Enable Google Sign-in method
+Authentiation > Sign-in method
+Enable Google under the list of providers
+
+Public-facing anme for project = your firebase project id
+Support email for project = your firebase email address
+Sabe the changes
+
+
+------------------------------------------------------------------
+
+
+=> Customize the Password Reset Email Template
+you can customize the password reset email link to redirected user to a specific page in your app
+
+Authentication > Templates > Password reset > click Edit pen
+
+-----------------------------------------------------------------------------
+
+=> How to install Tailwind CSS
+
+1. Install Tailwind CSS
+https://tailwindcss.com/docs/installation/using-postcss
+
+npm install -D tailwindcss postcss autoprefixer
+
+npx tailwindcss init ( this create a tailwind.config.js file into your project)
+
+
+2.Add Tailwind to your PostCSS configuration
+create post.css.config.js manually ( Note: do not forgot to export as ES6 )
+
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  }
+}
+
+3.Configure your template paths
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./src/**/*.{html,js}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+
+
+4. Add the Tailwind directives to your CSS
+create a css file located to ( eg. src/css/main.css )
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+npm run build
+npm run dev
+
+
+5. include css link to each html files
+<link href="./css/main.css" rel="stylesheet" type="text/css" />

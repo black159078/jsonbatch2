@@ -22,3 +22,74 @@ Click 'Continue to console'
 
 => Get Firebase SDK code (Software Development Kit)
 Click leftsidebar "Project Overview" > Project Settings > you can see your app code
+
+-----------------------------
+
+
+=> Setting Up Firebase VIA NPM (Javascript Node)
+
+https://nodejs.org/en
+
+
+=> For Ubuntu Linux
+
+= need to install nvm ( Node Version Manager )
+sudo apt update
+sudo apt-get upgrade -y
+
+sudo apt install crul
+
+
+or
+sudo apt-get install nodejs
+
+sudo apt-get install npm
+
+check version = node -v
+check version = npm -v
+
+
+------------------------------------------------------
+
+=>Nodemon (auto restart after save(ctl+s))
+
+(before = just for knowledge why we need nodemon)
+
+node server.js
+
+ctl+s
+ctl+c
+node server.js
+
+ctl+s
+rs
+
+(after = nodemon)
+
+nodemon server.js
+ctl+s
+
+
+=> install (global install)
+npm install -g nodemon
+
+=> Specific Project(optional)
+npm install --save-dev nodemon
+
+=> Using nodemon
+nodemon server.js
+
+
+=> Add nodemon to package.json (optional)
+
+"scripts":{
+    "start":"node server.js",
+    "dev":"nodemon server.js"
+}
+
+Then you can run nodemon with : 
+npm run dev
+
+
+= check version
+nodemon --version
